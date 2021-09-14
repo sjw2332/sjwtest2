@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            padding: 5px;
+        }
+
+        .rating {
+            width: 70px;
+            text-align: center;
+        }
+
+        .movietable {
+            padding-top: 50px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div>
+        <h2>기온 : {{nowtemp.temp}} ℃ </h2>
+    </div>
+    <div class="container">
+        <table class="movietable">
+            <tr>
+                <td>사진</td>
+                <td>영화제목</td>
+                <td class="rating">평점</td>
+                <td>상세설명</td>
+            </tr>
+
+            {% for movie in movies %}
+            <tr>
+                <td>
+                    <img src = "{{movie.small_cover_image}}">
+                </td>
+                <td>
+                    {{movie.title}}
+                </td>
+                <td class="rating">
+                    {{movie.rating}}
+                </td>
+                <td>
+                    {{movie.summary}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+</body>
+</html>
